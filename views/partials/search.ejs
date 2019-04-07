@@ -1,0 +1,80 @@
+<form action="/dashboard/add-friend" method="POST">
+<div class="container">
+    <div class="search-group v2">
+      <input name="name" class="search-input inactive" type="text" placeholder="I'm looking for..."/>
+      <button class="button button-brand-primary button-search">Search</button>
+    </div>
+  </div>
+</form>
+  <style>
+ @charset "UTF-8";
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  align-items: center;
+  height: 50vh;
+  padding: 0;
+}
+
+
+.search-group {
+  display: flex;
+  width: 100%;
+  margin: 2em;
+  position: relative;
+}
+.search-group:before {
+  font-family: "iconfont";
+  content: "\f002";
+  font-size: 0.84em;
+  position: absolute;
+  left: 1.5em;
+  top: 1.1em;
+  color: #898989;
+}
+
+.search-input, .button-search {
+  padding: 0.6875em 2em;
+}
+
+.search-input {
+  transition: background 0.25s, border-color 0.25s, color 0.25s;
+  padding: 0.6875em 0.9375em 0.6875em 2.5em;
+  width: 100%;
+  border: solid 2px #cecfcf;
+  border-right: none;
+  border-radius: 2em 0 0 2em;
+  background: #fff;
+  box-sizing: border-box;
+}
+.search-input::placeholder {
+  transition: color 0.25s;
+  color: #abacac;
+  font-size: 0.95em;
+  -webkit-font-smoothing: antialias;
+}
+
+input.search-input:focus {
+  transition: background 0.25s, border-color 0.25s;
+  background: rgba(0, 0, 0, 0.075);
+  border-color: rgba(0, 0, 0, 0.015);
+  outline: none;
+}
+input.search-input:focus::placeholder {
+  transition: color 0.25s;
+  color: #898989;
+}
+
+.button-search {
+  transition: background 0.25s, color 0.25s;
+  border: none;
+  border-radius: 0 2em 2em 0;
+  background: #ffce0a;
+}
+.button-search:hover {
+  transition: background 0.25s, color 0.25s;
+  background: #000;
+  color: #fff;
+}
+  </style>

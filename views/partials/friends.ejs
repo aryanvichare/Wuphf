@@ -1,3 +1,9 @@
+<head>
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+</head>
 <style>
     @import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400';
 
@@ -153,21 +159,16 @@
                     <h1><%= friend.name %></h1>
                     <h3 id="friend_email"><%= friend.email %></h3>
                     <p class="bio"><%= friend.phone %></p>
-                    <button onclick="runShit()">Add Friend</button>
-                </div> 
+                    <button onclick="addNewFriend('<%= friend.email %>')">Add Friend</button>
+                </div>
             </div>
         </div>
     </div>
 </li>
 
 <script>
-    function runShit() {
-        var formData = new FormData();
-        formData.append('email', document.getElementById('friend_email').textContent);
-        var request = new XMLHttpRequest();
-        request.open('POST', '/dashboard/add-new-friend');
-        console.log('motherfucking shit worked')
-        request.send(formData)
+    function addNewFriend(email) {
+        $.post('/dashboard/add-new-friend', {friendEmail: email});
     }
 </script>
 <% });%>
